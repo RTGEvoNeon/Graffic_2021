@@ -1,0 +1,31 @@
+﻿@{ ViewData["Title"] = "Main Page"; }
+
+<div class="text-center">
+    <form method="post">
+        <p>
+            <label for="date">Начало: </label>
+            <input type="date" id="date" name="date1" />
+        </p>
+        <p>
+            <label for="date">Конец: </label>
+            <input type="date" id="date" name="date2" />
+        </p>
+        <p>
+            <button type="submit">Отправить</button>
+        </p>
+    </form>
+    <!-- HTML -->
+    <h5>@ViewData["Time"]</h5>
+    <div id="chartdiv"></div>
+</div>
+@section Scripts {
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/dataviz.js"></script>
+    <script>
+		var MyJson = @Html.Raw(ViewBag.Myjson);
+		console.log(MyJson);
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+}
